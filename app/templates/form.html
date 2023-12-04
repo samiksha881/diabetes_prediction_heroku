@@ -1,0 +1,194 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .main-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px;
+    }
+  
+    .form-wrapper {
+      margin: 0 auto;
+      max-width: 570px;
+      width: 100%;
+      background: white;
+      padding: 35px;
+    }
+  
+    .style-label {
+      color: #536387;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 24px;
+      margin-bottom: 10px;
+    }
+  
+    .predict-btn {
+      text-align: center;
+      width: 100%;
+      font-size: 16px;
+      border-radius: 5px;
+      padding: 14px 25px;
+      border: none;
+      font-weight: 500;
+      background-color: #306cb4;
+      color: white;
+      cursor: pointer;
+      margin-top: 25px;
+    }
+    .predict-btn:hover {
+      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+    }
+  
+  table, th, td {
+  border:1px solid black;
+}
+
+h3 {
+    margin-bottom: 3%;
+    color:#306cb4;
+}
+
+.mt-subheader{
+    margin-top: 5%;
+}
+
+table, th, td {
+    border: 1px solid lightgrey;
+}
+
+.results{
+    font-size: 116%;
+    font-weight: bolder;
+    color: #f6566f;
+}
+
+.rmv-underline{
+    text-decoration: none;
+}
+
+  </style>
+
+<body>
+<div class="main-wrapper" style="background-image: url(./static/bg1.jpeg);">
+    <div class="form-wrapper" >
+ <center>
+            <h1>Diabetes Checkpoint Pro</h1>
+            <h4>Diabetes prediction app</h4>
+            <img src="./static/hero1.png" style="width:75%;"> 
+            <h3>Your Responses</h3>
+            <table>
+                <tr>
+                    <th class="style-label">Name</th>
+                    <th class="style-label">{{name}}</th>
+                </tr>
+                <tr>
+                    <th class="style-label">Sex</th>
+                    <th class="style-label">{{input_response[0]}}</th>
+                </tr>
+                <tr>
+                    <th class="style-label">Age Group</th>
+                    <th class="style-label" > {{input_response[1]}}</th>
+                </tr>
+                <tr>
+                    <th class="style-label">Education Level</th>
+                    <th class="style-label">{{input_response[2]}}</th>
+                </tr>
+                <tr>
+                    <th class="style-label">Income Range</th>
+                    <th class="style-label">{{input_response[3]}}</th>
+                </tr>
+                <tr>
+                    <th class="style-label">Do you have high blood pressure?</th>
+                    <th class="style-label">{{input_response[4]}}</th>
+                </tr>
+                <tr>
+                    <th class="style-label">Do you have high cholesterol?</th>
+                    <th class="style-label">{{input_response[5]}}</th>
+                </tr>
+                <tr>
+                    <th class="style-label">Did you check for cholesterol in last 5 years?</th>
+                    <th class="style-label">{{input_response[6]}}</th>
+                </tr>
+                <tr>
+                    <th class="style-label">Ever had a stroke?</th>
+                    <th class="style-label">{{input_response[7]}}</th>
+                </tr>
+                <tr>
+                    <th class="style-label">Do you have Coronary heart disease (CHD) or myocardial infarction (MI)?</th>
+                    <th class="style-label">{{input_response[8]}}</th>
+                </tr>
+                <tr>
+                    <th class="style-label">Have you smoked at least 100 cigarettes in your entire life?</th>
+                    <th class="style-label">{{input_response[9]}}</th>
+                </tr>
+                <tr>
+                    <th class="style-label">Have you engaged in heavy alcohol consumption? </th>
+                    <th class="style-label">{{input_response[10]}}</th>
+                </tr>
+                <tr>
+                    <th class="style-label">Was there a time in the past 12 months when you needed to see a doctor but could not because of cost?</th>
+                    <th class="style-label">{{input_response[11]}}</th>
+                </tr>
+                <tr>
+                    <th class="style-label">Do you have any kind of health care coverage, including health insurance, prepaid plans such as HMO, etc.?</th>
+                    <th class="style-label">{{input_response[12]}}</th>
+                </tr>
+                <tr>
+                    <th class="style-label">Now thinking about your mental health, which includes stress, depression, and problems with emotions, for how many days during the past 30 days was your mental health not good?
+                    </th>
+                    <th class="style-label">{{input_response[13]}}</th>
+                </tr>
+                <tr>
+                    <th class="style-label">Now thinking about your physical health, which includes physical illness and injury, for how many days during the past 30 days was your physical health not good?</th>
+                    <th class="style-label">{{input_response[14]}}</th>
+                </tr>
+                <tr>
+                    <th class="style-label">Any physical activity in past 30 days (excluding job)?</th>
+                    <th class="style-label">{{input_response[15]}}</th>
+                </tr>
+                <tr>
+                    <th class="style-label">Do you struggle with walking or climbing stairs?
+                    </th>
+                    <th class="style-label">{{input_response[16]}}</th>
+                </tr>
+                <tr>
+                    <th class="style-label">Do you consume fruits 1 or more times per day?</th>
+                    <th class="style-label">{{input_response[17]}}</th>
+                </tr>
+                <tr>
+                    <th class="style-label">Do you consume vegetables 1 or more times per day?
+                    </th>
+                    <th class="style-label">{{input_response[18]}}</th>
+                </tr>
+                <tr>
+                    <th class="style-label">Would you say that, in general, your health is?</th>
+                    <th class="style-label">{{input_response[19]}}</th>
+                </tr>
+                <tr>
+                    <th class="style-label">How would you categorize your BMI?</th>
+                    <th class="style-label">{{input_response[20]}}</th>
+                </tr>
+            </table>
+             <!-- Result -->
+             <h3 class="mt-subheader">Results</h3>
+	<div class="results"><p class='result-p'>{{y_pred}}.</p></div>
+    </center>
+     
+        <button class="predict-btn">
+            <a  class="predict-btn rmv-underline" href="{{ url_for('index') }}">Back to Main Page</a>
+            </button>
+
+    </div>
+  </div>
+
+</body>
+  

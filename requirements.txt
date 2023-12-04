@@ -1,0 +1,11 @@
+click
+Flask
+itsdangerous
+Jinja2
+numpy
+pandas
+threadpoolctl
+Werkzeug
+ucimlrepo
+gunicorn
+scikit-learn
